@@ -3035,10 +3035,7 @@
     "_preview": true,
     "preview": true,
     "_custom": true,
-    "_file": {
-      "__uuid__": "915be298-1e14-40a2-aaaf-5f19c174fdf6",
-      "__expectedType__": "cc.ParticleAsset"
-    },
+    "_file": null,
     "_spriteFrame": {
       "__uuid__": "d18dd93e-df20-447d-96dd-d4d8e5507d87@f9941",
       "__expectedType__": "cc.SpriteFrame"
@@ -3159,8 +3156,6 @@
       "__id__": 0
     },
     "fileId": "8dMwoGhd1GUbOjpeRqLjco",
-    "instance": null,
-    "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
   },
   {
@@ -3177,7 +3172,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 510.00000000000006,
+      "width": 510,
       "height": 680
     },
     "_anchorPoint": {

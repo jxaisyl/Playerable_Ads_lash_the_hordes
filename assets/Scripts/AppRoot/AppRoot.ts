@@ -7,8 +7,8 @@ import { AudioPlayer } from "../Services/AudioPlayer/AudioPlayer";
 import { SaveSystem } from "./SaveSystem";
 import { ModalWindowManager } from "../Services/ModalWindowSystem/ModalWindowManager";
 import { OpenCloseAnimator } from "../Utils/OpenCloseAnimator";
-import { Y8 } from "../../Plugins/Y8/Scripts/Y8";
-import { Analytics } from "./Analytics";
+import { GuestAccount } from "./GuestAccount";
+// import { Analytics } from "./Analytics";
 const { ccclass, property } = _decorator;
 
 @ccclass("AppRoot")
@@ -20,14 +20,14 @@ export class AppRoot extends Component {
     @property(Camera) private mainCamera: Camera;
     @property(ModalWindowManager) private modalWindowManager: ModalWindowManager;
     @property(OpenCloseAnimator) private screenFader: OpenCloseAnimator;
-    @property(Y8) private y8: Y8;
 
     private static instance: AppRoot;
     private saveSystem: SaveSystem;
+    private guestAccount: GuestAccount;
 
     private liveUserData: UserData;
     private gameAssets: GameAssets;
-    private analytics: Analytics;
+    // private analytics: Analytics;
 
     public static get Instance(): AppRoot {
         return this.instance;
@@ -65,13 +65,13 @@ export class AppRoot extends Component {
         return this.screenFader;
     }
 
-    public get Y8(): Y8 {
-        return this.y8;
+    public get GuestAccount(): GuestAccount {
+        return this.guestAccount;
     }
 
-    public get Analytics(): Analytics {
-        return this.analytics;
-    }
+    // public get Analytics(): Analytics {
+    //     return this.analytics;
+    // }
 
     public saveUserData(): void {
         this.saveSystem.save(this.liveUserData);
@@ -88,12 +88,15 @@ export class AppRoot extends Component {
     }
 
     public update(deltaTime: number): void {
-        if (this.analytics) this.analytics.update(deltaTime);
+        // if (this.analytics) this.analytics.update(deltaTime);
     }
 
-    private async init(): Promise<void> {
+    private init(): void {
         this.saveSystem = new SaveSystem();
         this.liveUserData = this.saveSystem.load();
+
+        this.guestAccount = new GuestAccount();
+        this.guestAccount.init();
 
         const gameAssetsNode = instantiate(this.gameAssetsPrefab);
         gameAssetsNode.setParent(this.node);
@@ -105,8 +108,6 @@ export class AppRoot extends Component {
         this.screenFader.init();
         this.screenFader.node.active = false;
 
-        await this.y8.init();
-
-        this.analytics = new Analytics(this.y8);
+        // this.analytics = new Analytics();
     }
 }

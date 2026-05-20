@@ -4,8 +4,7 @@
     "displayRatio": 0.5,
     "watermarkLocation": "default",
     "logo": {
-      "type": "custom",
-      "image": "project://assets/Media/Images/Game/UI/Y8LogoSplash.png"
+      "type": "default"
     },
     "background": {
       "type": "color",
