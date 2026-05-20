@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/cool0/.claude/**)",
+      "mcp__web-reader__webReader",
+      "Bash(curl -s \"https://api.github.com/repos/ppgee/cocos-pnp/releases\")",
+      "Bash(python -c \":*)",
+      "Bash(curl -s \"https://api.github.com/repos/ppgee/cocos-pnp/releases\" -o /tmp/releases.json)",
+      "Bash(node -e \":*)",
+      "Bash(curl -s \"https://api.github.com/repos/ppgee/cocos-pnp/releases\" -o D:/CCC_Projects/Slash-The-Hordes/temp/releases.json)",
+      "Bash(node -e \"const data=JSON.parse\\(require\\(''fs''\\).readFileSync\\(''D:/CCC_Projects/Slash-The-Hordes/temp/releases.json'',''utf8''\\)\\);data.forEach\\(r=>{console.log\\(''Tag:'',r.tag_name,''Name:'',r.name\\);\\(r.assets||[]\\).forEach\\(a=>console.log\\(''  Asset:'',a.name,''URL:'',a.browser_download_url\\)\\)}\\);\")",
+      "Bash(mkdir -p D:/CCC_Projects/Slash-The-Hordes/extensions)",
+      "Bash(curl -L -o D:/CCC_Projects/Slash-The-Hordes/extensions/playable-3x.zip \"https://github.com/ppgee/cocos-pnp/releases/download/playable-ads-adapter-1.3.10/playable-3x.zip\")",
+      "Bash(unzip -o playable-3x.zip)",
+      "Bash(rm D:/CCC_Projects/Slash-The-Hordes/extensions/playable-3x.zip)",
+      "Bash(rm D:/CCC_Projects/Slash-The-Hordes/temp/releases.json)"
+    ]
+  }
+}
